@@ -1,9 +1,10 @@
-import { FIRST_UPLOAD, LAST_UPLOAD } from "../actionTypes/actionTypes";
+import { FIRST_UPLOAD, LAST_UPLOAD, POSTS_BY_TAG } from "../actionTypes/actionTypes";
 
 const initalState = {
     filters: {
         lastUpload: false,
         firstUpload: false,
+        tag: '',
     }
 }
 
@@ -15,12 +16,24 @@ const filterReducer = (state = initalState, action) => {
                 ...state,
                 filters: {
                     ...state.filters,
-                    
+                    firstUpload: !state.filters.firstUpload,
                 }
             }
         case LAST_UPLOAD:
             return {
-
+                ...state,
+                filters: {
+                    ...state.filters,
+                    firstUpload: false,
+                }
+            }
+        case POSTS_BY_TAG:
+            return {
+                ...state,
+                filters: {
+                    ...state.filters,
+                    tag: action.payload
+                }
             }
 
         default:

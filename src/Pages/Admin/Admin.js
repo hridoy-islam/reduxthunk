@@ -5,7 +5,7 @@ import deletePost from '../../Redux/thunk/deletePost';
 import fetchPosts from '../../Redux/thunk/fetchPosts';
 
 const Admin = () => {
-    const posts = useSelector(state => state.posts)
+    const posts = useSelector(state => state.post.posts)
     const dispatch = useDispatch();
     useEffect(()=> {
         dispatch(fetchPosts())
@@ -39,7 +39,7 @@ const Admin = () => {
                                 </thead>
                                 <tbody>
                                     
-                                    {posts.map(post => 
+                                    {posts.map((post, i) => 
                                     <tr className="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
                                         <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                             {post.title}

@@ -25,7 +25,7 @@ const postReducer = (state = initalState, action) => {
         case UPDATE_CONTENT: 
         return {
             ...state,
-            posts: [state.posts.filter(post => post._id !== action.payload._id), action.payload],
+            posts: [...state.posts],
         }
         default:
             return state;

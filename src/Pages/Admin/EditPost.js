@@ -15,7 +15,7 @@ const EditPost = () => {
         dispatch(fetchPosts())
     }, [dispatch]);
 
-    const editpost = useSelector(state => state.posts.filter(post => post._id === id))
+    const editpost = useSelector(state => state.post.posts.filter(post => post._id === id))
     const submit = (data) => {
         const post = {
             title: data.title,

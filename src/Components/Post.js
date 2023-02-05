@@ -1,8 +1,11 @@
 import moment from 'moment';
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { postsByTag } from '../Redux/actions/filterActions';
 
 const Post = ({ post }) => {
+    const dispatch = useDispatch();
     return (
         <div className="overflow-hidden bg-white rounded shadow">
             <div className="p-5">
@@ -12,7 +15,7 @@ const Post = ({ post }) => {
                     </Link>
 
                     <div className="absolute top-4 left-4">
-                        {post.tags.map(tag => <span className="px-4 py-2 text-xs font-semibold tracking-widest text-gray-900 uppercase bg-white rounded-full">{tag} </span>)}
+                        {post.tags.map(tag => <span className="px-4 py-2 text-xs font-semibold tracking-widest text-gray-900 uppercase cursor-pointer bg-white rounded-full" onClick={()=> dispatch(postsByTag(tag))}>{tag} </span>)}
                     </div>
                 </div>
                 <span className="block mt-6 text-sm font-semibold tracking-widest text-gray-500 uppercase"> {moment(post.createdAt).format('MMMM Do YYYY h:mm:ss a')} </span>

@@ -3,6 +3,7 @@ import { updatePostAction } from "../actions/postActions";
 const updatePost = (post) => {
 
     return async(dispatch, getState) => {
+        
         const res = await fetch(`http://localhost:5000/post/${post._id}`, {
             method: 'PATCH',
             body: JSON.stringify(post),
@@ -13,6 +14,7 @@ const updatePost = (post) => {
         const data = await res.json();
         if(data.acknowledged){
             dispatch(updatePostAction(post))
+            console.log(data);
         }
     }
 }
