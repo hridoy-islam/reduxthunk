@@ -4,7 +4,7 @@ import { addContent } from "../actions/postActions";
 const addPost = (post) => {
     
     return async(dispatch, getState) => {
-        const res = await fetch('http://localhost:5000/post', {
+        const res = await fetch(`${process.env.REACT_APP_API}/post`, {
             method: 'POST',
             body: JSON.stringify(post),
             headers: {

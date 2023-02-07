@@ -24,7 +24,7 @@ const filterReducer = (state = initalState, action) => {
                 ...state,
                 filters: {
                     ...state.filters,
-                    firstUpload: false,
+                    lastUpload: !state.filters.lastUpload,
                 }
             }
         case POSTS_BY_TAG:

@@ -4,7 +4,7 @@ const updatePost = (post) => {
 
     return async(dispatch, getState) => {
         
-        const res = await fetch(`http://localhost:5000/post/${post._id}`, {
+        const res = await fetch(`${process.env.REACT_APP_API}/post/${post._id}`, {
             method: 'PATCH',
             body: JSON.stringify(post),
             headers: {

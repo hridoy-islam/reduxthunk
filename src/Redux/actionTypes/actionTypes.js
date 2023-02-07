@@ -6,3 +6,4 @@ export const DELETE_CONTENT = "DELETE_CONTENT";
 export const LAST_UPLOAD = "LAST_UPLOAD";
 export const FIRST_UPLOAD = "FIRST_UPLOAD";
 export const POSTS_BY_TAG = "POSTS_BY_TAG";
+export const READING_COUNT = "READING_COUNT";

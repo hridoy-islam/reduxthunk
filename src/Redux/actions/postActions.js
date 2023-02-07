@@ -1,6 +1,6 @@
-import { ADD_CONTENT, DELETE_CONTENT, GET_CONTENT, UPDATE_CONTENT } from "../actionTypes/actionTypes"
+import { ADD_CONTENT, DELETE_CONTENT, GET_CONTENT, READING_COUNT, UPDATE_CONTENT } from "../actionTypes/actionTypes"
 
-export const fetchPostAction = (posts)=> {
+export const fetchPostAction = (posts) => {
     return {
         type: GET_CONTENT,
         payload: posts,
@@ -24,6 +24,13 @@ export const addContent = (post) => {
 export const updatePostAction = (post) => {
     return {
         type: UPDATE_CONTENT,
+        payload: post,
+    }
+}
+
+export const readingCount = (post) => {
+    return {
+        type: READING_COUNT,
         payload: post,
     }
 }
